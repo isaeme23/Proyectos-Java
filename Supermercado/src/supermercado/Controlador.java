@@ -115,7 +115,7 @@ public class Controlador {
     
     /**
      * Método estadoCola
-     * Le indica a la zona de cobro  que saque por pantalla los resultados de la simulacion
+     * Le indica a la zona de cobro que saque por pantalla los resultados de la simulacion
      * @param r tiempo actual
      */
      public void estadoCola(Reloj r){

@@ -30,11 +30,10 @@ public class Carrito {
       if(numproductos<1){
           numproductos = 1;
       }
-      for(int i = 0; i<numproductos; i++){
-          precio = (int)(-Precio*Math.log(1-Math.random()));
+      for(int i = 0; i<numproductos; i++) {
+          precio = (int) (-Precio * Math.log(1 - Math.random()));
           mi_carrito.add(new Producto(precio));
       }
-     
   }
  
   /**
