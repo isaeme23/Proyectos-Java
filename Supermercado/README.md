@@ -9,6 +9,10 @@ realizar cambios.
 
 ![](fork.png)
 
+2 Clonamos el proyecto para despues bajarlo y trabarlo en la maquina local
+
+![](clone.png)
+
 ## Indentificar de malas prácticas
 ### Principios SOLID
 1. **Single Responsibility**
@@ -31,6 +35,11 @@ Esta puese ser sustituida por una clase de tipo Reloj, ya que este en el futuro 
 cambiar o se puede necesitar un tipo diferente de reloj. Podemos crear una interfaz
 llamada "Reloj" y agregar una clase "RelojComun" que implemente esta interfaz.
 De la misma forma, ahora no tendriamos una instancia de clase sino una interfaz.
+
+tambien podriamos hacer lo mismo con la clase de Producto ya que es una clase, que aunque 
+queramos agregar un producto diferente nos toca cambiar la mayoria de la logica, ya que productos
+deberiaa de ser una clase abstracta o por lo menos un interfaz ya que si ahorra queremos agregar productos
+no podremos
 ## Unit Test y malas prácticas
 ### Principio FIRST
 
@@ -39,6 +48,23 @@ para ellas, en vez de esto se realizó un main que ejecutara 3 posibles
 pruebas por lo que no cumple con ningún aspecto del principio FIRST,
 por lo que proponemos realizar las pruebas con junit teniendo en
 cuenta las clases de equivalencia que se propondrán a continuación:
+
+### No cumple con el nombramiento de las pruebas
+
+viendo las pruebas realizadas nos damos cuenta de que las pruebas no tienen nombre porque solo
+es un main que propone varias pruebas donde al ejecutarlo no se pueden diferenciar y estan mal echas
+
+
+### Patrón AAA 
+
+Tampoco cumple con el Patrón AAA, ya que no lo sigue y la prueba realizada ni siquiera esta organizada, 
+no actua si no que tiene un monto de if, y ademas no afirma porlo que si modificamos los metodos no sabremos
+si siguen siendo correctas o acaban de pasar 
+
+### Propuesta Solucion
+
+Se recomienda borrar las clases de prueba y volverlas hacer correctamente, seguindo las buenas
+practicas de programacion
 
 **Clases de equivalencia:**
 * Cajas:
@@ -57,3 +83,10 @@ cuenta las clases de equivalencia que se propondrán a continuación:
   * Se inicia con el valor dado por el usuario
 
 ## Patrones de diseño
+
+  * Patron de creacion: Singleton se inicializa la clase principal que se encarga de todo y 
+se asegura que solo una instancia de la clase pueda ser creada, esta el es patron de creacion
+que aplica ya que como mencionamos antes la clase supermercado es la que se encrga de todo 
+
+## GIT (add, commit, push)
+
