@@ -90,3 +90,5 @@ que aplica ya que como mencionamos antes la clase supermercado es la que se encr
 
 ## GIT (add, commit, push)
 
+![](git.png)
+
