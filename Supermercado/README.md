@@ -1,6 +1,8 @@
 # Parcial CVDS 2022-2
 ## Integrantes
 Santiago Ospina, Isabella Manrique
+
+Grupo: SemiColon
 ## Git
 Este proyecto fue tomado del siguiente repositorio en [GitHub](https://github.com/jalex3421/Proyectos-Java/tree/master/Supermercado)
 1. Realizamos el fork, que es una copia del repositorio en nuestro usuario 
@@ -28,6 +30,8 @@ esta se encargue únicamente de ejecutar la simulación y dejar
 a la clase supermercado con la única responsabilidad de la creación
 del objeto y métodos que sean necesarios para el objeto.
 
+![](single.png)
+
 2. **Open Closed, Liskov e Interface Segregation**
 
 Para esto tomaremos la clase reloj, que es instanciada en la clase supermercado.
@@ -35,24 +39,48 @@ Esta puese ser sustituida por una clase de tipo Reloj, ya que este en el futuro 
 cambiar o se puede necesitar un tipo diferente de reloj. Podemos crear una interfaz
 llamada "Reloj" y agregar una clase "RelojComun" que implemente esta interfaz.
 De la misma forma, ahora no tendriamos una instancia de clase sino una interfaz.
+![](relog.png)
 
 tambien podriamos hacer lo mismo con la clase de Producto ya que es una clase, que aunque 
 queramos agregar un producto diferente nos toca cambiar la mayoria de la logica, ya que productos
 deberiaa de ser una clase abstracta o por lo menos un interfaz ya que si ahorra queremos agregar productos
 no podremos
+![](producto.png)
+3. **Dependency Inversion**
+
+la clase principal supermercado depende de clase de niveles mas baja, esto hace que nuestro codigo
+sea muy dependiente y si cambia la logica de una de las clases tendremos que cambiar la logica
+en la clase de supermercado, Para solucionar esto proponemos construir una Factory que encarge de la creación 
+de estas instancias y las injecte a la clase que las necesita.
+![](supermercado1.png)
 ## Unit Test y malas prácticas
 ### Principio FIRST
-
+![](test1.png)
+![](test2.png)
+![](test3.png)
+![](test4.png)
 A este proyecto se le realizaron pruebas, pero no se utilizó junit
 para ellas, en vez de esto se realizó un main que ejecutara 3 posibles
 pruebas por lo que no cumple con ningún aspecto del principio FIRST,
 por lo que proponemos realizar las pruebas con junit teniendo en
 cuenta las clases de equivalencia que se propondrán a continuación:
 
-### No cumple con el nombramiento de las pruebas
+**Clases de equivalencia:**
+* Cajas:
+  * El mínimo número de cajas es 0.
+  * El máximo número de cajas es de 10.
+  * Se empieza la simulación con el número de cajas indicado por el usuario.
 
-viendo las pruebas realizadas nos damos cuenta de que las pruebas no tienen nombre porque solo
-es un main que propone varias pruebas donde al ejecutarlo no se pueden diferenciar y estan mal echas
+
+* Tiempo de llegada de carritos:
+  * Debe ser mayor que 0
+  * Se inicia con el valor dado por el usuario
+
+
+* Productos:
+  * Debe ser mayor que 0
+  * Se inicia con el valor dado por el usuario
+
 
 
 ### Patrón AAA 
@@ -66,21 +94,6 @@ si siguen siendo correctas o acaban de pasar
 Se recomienda borrar las clases de prueba y volverlas hacer correctamente, seguindo las buenas
 practicas de programacion
 
-**Clases de equivalencia:**
-* Cajas:
-  * El mínimo número de cajas es 0.
-  * El máximo número de cajas es de 10.
-  * Se empieza la simulación con el número de cajas indicado por el usuario.
-  
-
-* Tiempo de llegada de carritos:
-  * Debe ser mayor que 0
-  * Se inicia con el valor dado por el usuario
-
-
-* Productos:
-  * Debe ser mayor que 0
-  * Se inicia con el valor dado por el usuario
 
 ## Patrones de diseño
 
